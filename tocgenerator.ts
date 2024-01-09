@@ -1,4 +1,4 @@
-/*! --- Table of Contents Generator ------------------------------------------- *
+/** --- Table of Contents Generator ------------------------------------------- *
  * mpc_tocgenerator 1.0.0
  * @copyright 2017-2023 Mootly Obviate -- See /LICENSE.md
  * @license   MIT
@@ -168,4 +168,4 @@ class mpc_tocgenerator {
   }
                     // End Generation Loop                                      *
 }
-/*! --------------------------------------------------------------------------- */
+/*! --- Copyright (c) 2023 Mootly Obviate -- See /LICENSE.md ------------------ */

@@ -10,20 +10,27 @@ Written for ES6.
 
 This was written in TypeScript and exported to ES6 to allow support for browsers not yet up to the most recent ECMAScript standards.
 
-## Contents
+## Assets
 
 The files in this set are as follows:
 
-| path                    | description
-| ------------            | ------------
-| LICENSE.md              | License notice ( [MIT](https://mit-license.org) ).
-| README.md               | This document.
-| mpc_tocgenerator.ts     | The class definition in TypeScript.
-| mpc_tocgenerator.js     | The class definition in ES6.
-| mpc_tocgenerator.min.js | Minified version.
-| _invoke.js              | Example implementation code.
+| path                        | description
+| ------------                | ------------
+| LICENSE.md                  | License notice ( [MIT](https://mit-license.org) ).
+| README.md                   | This document.
+| mpc_tocgenerator.ts         | The class definition in TypeScript.
+| mpc_tocgenerator.js         | The class definition in ES6.
+| mpc_tocgenerator.min.js     | Minified version.
+| mpc_tocgenerator.min.js.map | Map file.
+| _invoke.js                  | Example implementation code.
 
-## Implementation
+## Installation
+
+Download this repo, or just the script, and add it to the script library for your site.
+
+This script has no external dependencies.
+
+## Configuration
 
 The script inserts a menu after an element with a given ID, the default is `toc-links`.
 

@@ -1,6 +1,6 @@
-# MoosePlum JavaScript Sticky Headers
+# MoosePlum JavaScript Table of Contents Generator
 
-## MoosePlum Sticky Headers
+## MoosePlum Table of Contents Generator
 
 Copyright (c) 2023 Mootly Obviate
 

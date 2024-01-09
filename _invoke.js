@@ -16,5 +16,5 @@ let mp = {
 // ...
 };
                     // only invoke these manually if auto=false                 *
-// window.addEventListener('load', (e) => { mpl.contents.create(); });
+// window.addEventListener('load', (e) => { mp.contents.create(); });
 /* ---------------------------------------------------------------------------- */
