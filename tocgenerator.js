@@ -112,8 +112,9 @@ class mpc_tocgenerator {
       }
                     // Queue up sub-menu listings if exist                      *
                     // Counterintuitive.                                        * !!!!!!
-                    // Review for a better approach.                            * !!!!!!
-      if ((this.el_tocSublist.childElementCount) && (this.el_tocList.childElementCount)) {
+                    // If submenu exists, and no longer in submenu              *
+                    // Add it to parent DOM object and reset                    *
+      if (!(el.classList?.contains('add-toc')) && (this.el_tocSublist.childElementCount) && (this.el_tocList.childElementCount)) {
         this.el_tocList.lastElementChild?.appendChild(this.el_tocSublist.cloneNode(true));
         while (this.el_tocSublist.firstChild) {
           this.el_tocSublist.removeChild(this.el_tocSublist.firstChild);
