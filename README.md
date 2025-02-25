@@ -14,21 +14,28 @@ This was written in TypeScript and exported to ES6 to allow support for browsers
 
 The files in this set are as follows:
 
-| path                        | description
-| ------------                | ------------
-| LICENSE.md                  | License notice ( [MIT](https://mit-license.org) ).
-| README.md                   | This document.
-| mpc_tocgenerator.ts         | The class definition in TypeScript.
-| mpc_tocgenerator.js         | The class definition in ES6.
-| mpc_tocgenerator.min.js     | Minified version.
-| mpc_tocgenerator.min.js.map | Map file.
-| _invoke.js                  | Example implementation code.
+| path                        | description                                        |
+| --------------------------- | -------------------------------------------------- |
+| LICENSE.md                  | License notice ( [MIT](https://mit-license.org) ). |
+| README.md                   | This document.                                     |
+| mpc_tocgenerator.ts         | The class definition in TypeScript.                |
+| mpc_tocgenerator.js         | The class definition in ES6.                       |
+| mpc_tocgenerator.min.js     | Minified version.                                  |
+| mpc_tocgenerator.min.js.map | Map file.                                          |
+| tsconfig.json               | Example TS > ES 6 config setting.                  |
+| _invoke.js                  | Example implementation code.                       |
 
 ## Installation
 
 Download this repo, or just the script, and add it to the script library for your site.
 
 This script has no external dependencies.
+
+### Compiling from the TypeScript
+
+To save to ES6 in the current folder, assuming you have the correct libraries installed, run the following in this folder:
+
+`tsc -p tsconfig.json`
 
 ## Configuration
 
@@ -47,7 +54,7 @@ You can also exclude elements by `innerText` value. On instantiation, the script
 
 ### Assumptions
 
-This script assumes the TOC is only being generated for a specific section of the page, the content section, to the exclusion of headers, footers, navigatino sections, etc.
+This script assumes the TOC is only being generated for a specific section of the page, the content section, to the exclusion of headers, footers, navigation sections, etc.
 
 Set the header for the TOC to `display="none"` when creating the document. The script will set it to visible. This is to prevent the heading for the TOC to display if the TOC doesn't generate.
 
@@ -72,7 +79,7 @@ Add a class to mark the next immediate element. The script grabs the next progra
 | pContainer  | string    | 'page-body' | Container element to search for headings.
 | pTier1      | string    | 'h2'        | Heading to use to generate the TOC.
 |             |           |             | There can be only one.
-| pTier2      | string    | 'h3,dt'     | Comma separated list of elements to check for add-toc.
+| pTier2      | string    | 'h3, dt'    | Comma separated list of elements to check for add-toc.
 |             |           |             | Should normally not be more than two:
 |             |           |             | Next heading level and DT.
 | pExclude    | string    | ''          | Comma separated list of headings to exclude.

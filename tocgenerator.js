@@ -18,15 +18,15 @@
  *  - Only uses IDs. (Do not use embedded anchors.)
  *  - Only checks for targets in specified divs by ID.
  * -----
- *  Parameters 
+ *  Parameters
  *  Most of these are best declared at the template level
- * name       | type      | default     | description 
+ * name       | type      | default     | description
  * ---------- | --------- | ----------  | ----------
  * pLocation  | string    | 'toc-links' | ID of header for table of contents.
  * pContainer | string    | 'page-body' | Container element to search for headings.
  * pTier1     | string    | 'h2'        | Heading to use to generate the TOC.
  *            |           |             | There can be only one.
- * pTier2     | string    | 'h3,dt'     | Comma separated list of elements to check for add-toc.
+ * pTier2     | string    | 'h3, dt'    | Comma separated list of elements to check for add-toc.
  *            |           |             | Should normally not be more than two:
  *            |           |             | Next heading level and DT.
  * pExclude   | string    | ''          | Comma separated list of headings to exclude.
@@ -52,14 +52,7 @@ class mpc_tocgenerator {
                     // *** Constructor ---------------------------------------- *
                     // Grab the specified table of content element by ID.       *
                     // If specified element does not exist,  do nothing.        *
-  constructor(
-    pLocation       = 'toc-links',
-    pContainer      = 'page-body',
-    pTier1          = 'h2',
-    pTier2          = 'h3, dt',
-    pExclude        = '',
-    pAuto           = true
-  ) {
+  constructor(pLocation = 'toc-links', pContainer = 'page-body', pTier1 = 'h2', pTier2 = 'h3, dt', pExclude = '', pAuto = true) {
     this.tocTarget = document.getElementById(pLocation);
     if (this.tocTarget?.parentNode) {
       this.tocParent = this.tocTarget.parentNode;
@@ -75,45 +68,47 @@ class mpc_tocgenerator {
                     // Array of headings to exclude by text value               *
                     // Can also use the class of 'toc-skip' within a page       *
       this.tocExclude = (pExclude)
-                    ? this.tocTarget.innerText.toString() + ', ' + pExclude
-                    : this.tocTarget.innerText;
+        ? this.tocTarget.innerText.toString() + ', ' + pExclude
+        : this.tocTarget.innerText;
                     // If auto, create TOC.                                     *
       this.skipChildren = false;
-      if (pAuto) { this.create(); }
+      if (pAuto) {
+        this.create();
+      }
     }
   }
                     // *** Generate our TOC block ----------------------------- *
   create() {
-      // Place the container element,then                         *
-      // Pepurpose to add inner content to HTML                   *
+                    // Place the container element,then                         *
+                    // Pepurpose to add inner content to HTML                   *
     this.el_tocList = document.createElement('ul');
     this.el_tocSublist = document.createElement('ul');
     this.el_tocList.id = 'jumpto';
     this.tocParent.insertBefore(this.el_tocList, this.tocTarget.nextSibling);
     this.el_tocList = document.getElementById('jumpto');
-    // Get elements to be added to TOC                          *
+                    // Get elements to be added to TOC                          *
     this.tocList = document.getElementById(this.tocContainer)?.querySelectorAll(this.tocInclude);
-    // Haxie to generate unique ids                             *
+                    // Haxie to generate unique ids                             *
     this.idCount = 1;
                     // Begin Generation Loop ---------------------------------- *
                     // Skip empty elements when generating TOC                  *
     this.tocList.forEach((el) => {
       if (el.textContent) {
         this.el_linkText = el.textContent || '';
-      } else {
+      }
+      else {
         return false;
       }
                     // Add id attribute to target if none.                      *
                     // This adds an id to all elements that _might_ be in TOC.  *
       if (!(el.hasAttribute('id'))) {
         el.id = 'goto-' + (this.idCount++) + '-' + (this.el_linkText
-                    .replace(/[`~!@#$%^&*()|+=?;'",.<>{}[\]\\/]/gi, '')
-                    .trim().replace(/ /g, '-')).substring(0, 24);
+          .replace(/[`~!@#$%^&*()|+=?;'",.<>{}[\]\\/]/gi, '')
+          .trim().replace(/ /g, '-')).substring(0, 24);
       }
                     // Queue up sub-menu listings if exist                      *
                     // Counterintuitive.                                        * !!!!!!
-                    // If submenu exists, and no longer in submenu              *
-                    // Add it to parent DOM object and reset                    *
+                    // Review for a better approach.                            *
       if (!(el.classList?.contains('add-toc')) && (this.el_tocSublist.childElementCount) && (this.el_tocList.childElementCount)) {
         this.el_tocList.lastElementChild?.appendChild(this.el_tocSublist.cloneNode(true));
         while (this.el_tocSublist.firstChild) {
@@ -126,7 +121,8 @@ class mpc_tocgenerator {
                     // - check for toc-skip                                     *
       if (el.classList.contains('toc-skip') || ((el.textContent) && (this.tocExclude.indexOf(el.textContent) != -1))) {
         this.skipChildren = true;
-      } else if ((el.textContent) && (el.tagName.toLowerCase() == this.tocTier1)) {
+      }
+      else if ((el.textContent) && (el.tagName.toLowerCase() == this.tocTier1)) {
         this.skipChildren = false;
                     // add linkto TOC element                                   *
         this.el_listItem = document.createElement('li');

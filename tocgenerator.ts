@@ -18,15 +18,15 @@
  *  - Only uses IDs. (Do not use embedded anchors.)
  *  - Only checks for targets in specified divs by ID.
  * -----
- *  Parameters 
+ *  Parameters
  *  Most of these are best declared at the template level
- * name       | type      | default     | description 
+ * name       | type      | default     | description
  * ---------- | --------- | ----------  | ----------
  * pLocation  | string    | 'toc-links' | ID of header for table of contents.
  * pContainer | string    | 'page-body' | Container element to search for headings.
  * pTier1     | string    | 'h2'        | Heading to use to generate the TOC.
  *            |           |             | There can be only one.
- * pTier2     | string    | 'h3,dt'     | Comma separated list of elements to check for add-toc.
+ * pTier2     | string    | 'h3, dt'    | Comma separated list of elements to check for add-toc.
  *            |           |             | Should normally not be more than two:
  *            |           |             | Next heading level and DT.
  * pExclude   | string    | ''          | Comma separated list of headings to exclude.
@@ -130,7 +130,7 @@ class mpc_tocgenerator {
       }
                     // Queue up sub-menu listings if exist                      *
                     // Counterintuitive.                                        * !!!!!!
-                    // Review for a better approach.                            * 
+                    // Review for a better approach.                            *
       if (!(el.classList?.contains('add-toc')) && (this.el_tocSublist.childElementCount) && (this.el_tocList.childElementCount)) {
         this.el_tocList.lastElementChild?.appendChild(this.el_tocSublist.cloneNode(true));
         while (this.el_tocSublist.firstChild) {

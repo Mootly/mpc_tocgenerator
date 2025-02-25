@@ -7,6 +7,6 @@
     "outFile": "./tocgenerator.js"
   },
   "include": [
-    "./tocgenrator.ts"
+    "./tocgenerator.ts"
   ]
 }

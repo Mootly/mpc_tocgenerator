@@ -7,7 +7,7 @@
 const toc_location  = 'toc-links';
 const toc_container = 'page-body';
 const toc_tier1     = 'h2';
-const toc_tier2     = 'h3, dt';
+const toc_tier2     = 'h3,dt';
 const toc_exclude   = '';
 const toc_auto      = true;
                     // All scripts in the mp namespace to avoid collisions.     *
