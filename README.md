@@ -12,16 +12,16 @@ This was written in TypeScript and exported to ES2020.
 
 The files in this set are as follows:
 
-| path                        | description                                        |
-| --------------------------- | -------------------------------------------------- |
-| LICENSE.md                  | License notice ( [MIT](https://mit-license.org) ). |
-| README.md                   | This document.                                     |
-| mpc_tocgenerator.ts         | The class definition in TypeScript.                |
-| mpc_tocgenerator.js         | The class definition in ES6.                       |
-| mpc_tocgenerator.min.js     | Minified version.                                  |
-| mpc_tocgenerator.min.js.map | Map file.                                          |
-| tsconfig.json               | Example TS > ES2020 config setting.                |
-| _invoke.js                  | Example implementation code.                       |
+| path                    | description                                        |
+| ----------------------- | -------------------------------------------------- |
+| LICENSE.md              | License notice ( [MIT](https://mit-license.org) ). |
+| README.md               | This document.                                     |
+| tocgenerator.ts         | The class definition in TypeScript.                |
+| tocgenerator.js         | The class definition in ES6.                       |
+| tocgenerator.min.js     | Minified version.                                  |
+| tocgenerator.min.js.map | Map file.                                          |
+| tsconfig.json           | Example TS > ES2020 config setting.                |
+| _invoke.js              | Example implementation code.                       |
 
 ## Installation
 
