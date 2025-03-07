@@ -71,19 +71,19 @@ Add a class to mark the next immediate element. The script grabs the next progra
 
 ### Parameters
 
-| name        | type      | default     | description
-| ----------  | --------- | ----------  | ----------
-| pLocation   | string    | 'toc-links' | ID of header for table of contents.
-| pContainer  | string    | 'page-body' | Container element to search for headings.
-| pTier1      | string    | 'h2'        | Heading to use to generate the TOC.
-|             |           |             | There can be only one.
-| pTier2      | string    | 'h3, dt'    | Comma separated list of elements to check for add-toc.
-|             |           |             | Should normally not be more than two:
-|             |           |             | Next heading level and DT.
-| pExclude    | string    | ''          | Comma separated list of headings to exclude.
-|             |           |             | Use innerText.
-|             |           |             | Script automaticaly excludes id="toc-links".
-| pAuto       | boolean   | true        | Whether to automatically generate TOC.
+| name       | type    | default     | description                                            |
+| ---------- | ------- | ----------- | ------------------------------------------------------ |
+| pLocation  | string  | 'toc-links' | ID of header for table of contents.                    |
+| pContainer | string  | 'page-body' | Container element to search for headings.              |
+| pTier1     | string  | 'h2'        | Heading to use to generate the TOC.                    |
+|            |         |             | There can be only one.                                 |
+| pTier2     | string  | 'h3, dt'    | Comma separated list of elements to check for add-toc. |
+|            |         |             | Should normally not be more than two:                  |
+|            |         |             | Next heading level and DT.                             |
+| pExclude   | string  | ''          | Comma separated list of headings to exclude.           |
+|            |         |             | Use innerText.                                         |
+|            |         |             | Script automaticaly excludes id="toc-links".           |
+| pAuto      | boolean | true        | Whether to automatically generate TOC.                 |
 
 ### Coding Example
 
