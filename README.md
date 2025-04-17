@@ -1,5 +1,7 @@
 # MoosePlum Table of Contents Generator
 
+Repo: [Mootly/mpc_tocgenerator](https://github.com/Mootly/mpc_tocgenerator)
+
 This is script autogenerates a Table of Contents for the current page based on page headings.
 
 It is intentionally designed to only track two layers deep on the TOC. If you need more layers your page is probably way to long and complex and should be broken out into a subsite.
@@ -14,6 +16,7 @@ The files in this set are as follows:
 
 | path                    | description                                        |
 | ----------------------- | -------------------------------------------------- |
+| CHANGELOG.md            | The changelog for this widget.                     |
 | LICENSE.md              | License notice ( [MIT](https://mit-license.org) ). |
 | README.md               | This document.                                     |
 | tocgenerator.ts         | The class definition in TypeScript.                |
